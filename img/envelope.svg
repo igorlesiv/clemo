@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Envelope" class="cls-1" d="M125,6006h14a1,1,0,0,1,1,1v10a1,1,0,0,1-1,1H125a1,1,0,0,1-1-1v-10A1,1,0,0,1,125,6006Zm1,2h12v8H126v-8Zm1,0,5,4,5-4h1v1l-6,5-6-5v-1h1Z" transform="translate(-124 -6006)"/>
+</svg>

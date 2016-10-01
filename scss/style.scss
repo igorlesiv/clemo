@@ -1,0 +1,1005 @@
+/*
+* author: Ihor Lesiv
+* email: mr.igorlesiv@gmail.com
+*/
+
+// Typography
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('../fonts/Montserrat-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat-Hairline';
+  src: url('../fonts/Montserrat-Hairline.ttf');
+}
+
+// Imports
+@import 'variables';
+@import 'hamburger';
+@import 'owl-carousel';
+
+// Global Styles
+body {
+  font-size: 16px;
+}
+
+.sectionHeadline {
+  text-align: center;
+  text-transform: lowercase;
+  font-size: 3.4375em;
+  font-family: $mainFontHairline;
+  color: $textColor;
+  margin: 80px auto;
+  // XS
+  @media (max-width: $xs) {
+    margin: 10px auto 25px auto;
+    font-size: 2.125em;
+  }
+}
+
+// Buttons
+.btn {
+  height: 46px;
+  padding: 0px 28px;
+  display: block;
+  margin-top: 55px;
+  border: 0;
+  border-radius: 25px;
+  transition: all ease-in-out .2s;
+  box-sizing: content-box;
+  font-size: 1em;
+  font-family: $mainFontLight;
+  line-height: 46px;
+
+  &:focus {
+    outline: none;
+  }
+
+  // Light Btn
+  &.light {
+    background: transparent;
+    border: 2px solid $imageBg;
+    color: $textColor;
+
+    &:hover {
+      border: 2px solid $textColor;
+      background: $textColor;
+      color: $textColorWhite;
+    }
+  }
+
+  // Hard Btn
+  &.hard {
+    background: $textColor;
+    border: 2px solid transparent;
+    color: $textColorWhite;
+
+    &:hover {
+      border: 2px solid $textColor;
+      background: transparent;
+      color: $textColor;
+    }
+  }
+
+  &.hard-light {
+    background: $textColorWhite;
+    border: 2px solid transparent;
+    color: $textColor;
+
+    &:hover {
+      border: 2px solid $textColorWhite;
+      background: transparent;
+      color: $textColorWhite;
+    }
+  }
+}
+
+// Carousel
+.controls {
+  .dot {
+    width: 14px;
+    height: 14px;
+    display: block;
+    border-radius: 50%;
+    border: 1px solid $textColor;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    &.active {
+      background: $textColor;
+    }
+  }
+}
+
+// Header
+.header {
+  padding-top: 40px;
+  // XS
+  @media (max-width: $xs) {
+    padding-top: 15px;
+  }
+
+  .logo {
+    margin: 0;
+    padding: 0;
+    font-family: $mainFontBold;
+    font-weight: bold;
+    font-size: 1.875em;
+    color: $textColor;
+    // XS
+    @media (max-width: $xs) {
+      line-height: 45px;
+    }
+
+    &::selection {
+      background: $mainYellow;
+    }
+  }
+
+  .mainNavigation {
+    position: relative;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      text-align: right;
+      line-height: 42px;
+      // XS
+      @media (max-width: $xs) {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: $textColorWhite;
+        padding-bottom: 15px;
+        top: -230px;
+        transition: transform .3s ease-in-out;
+      }
+
+      li {
+        display: inline-block;
+        list-style: none;
+        margin-left: 25px;
+
+        @media (max-width: $xs) {
+          display: block;
+          text-align: left;
+          margin-left: 0;
+        }
+
+        a {
+          text-decoration: none;
+          text-transform: lowercase;
+          font-family: $mainFontLight;
+          font-weight: normal;
+          font-size: 1em;
+          color: $textColorLightGray;
+          transition: color .3s;
+
+          &:hover {
+            color: $textColor;
+          }
+        }
+      }
+
+      &.active {
+        transform: translateY(230px);
+      }
+    }
+
+    #navToggle {
+      display: none;
+    }
+    // XS
+    @media (max-width: $xs) {
+      #navToggle {
+        display: inline-block;
+        float: right;
+        position: relative;
+        z-index: 5;
+      }
+    }
+  }
+
+  .slider {
+    width: 100%;
+    height: 550px;
+    background: $mainYellow;
+    margin-top: 45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // XS
+    @media (max-width: $xs) {
+      margin-top: 25px;
+      height: 300px;
+    }
+
+    .controls {
+      position: absolute;
+      right: 40px;
+      top: 45%;
+      // XS
+      @media (max-width: $xs) {
+        display: none;
+      }
+    }
+
+    .sliderContent {
+      h3 {
+        text-align: center;
+        text-transform: lowercase;
+        font-family: $mainFontBold;
+        color: $textColor;
+        font-size: 3em;
+        margin-bottom: 20px;
+        // XS
+        @media (max-width: $xs) {
+          font-size: 1.875em;
+          margin: 0;
+        }
+      }
+
+      hr {
+        max-width: 70px;
+        text-align: center;
+        color: $textColor;
+        border-top: 2px solid $textColor;
+        // XS
+        @media (max-width: $xs) {
+          margin: 10px auto;
+        }
+      }
+
+      p {
+        text-align: center;
+        color: $textColor;
+        text-transform: lowercase;
+        font-size: 1.375em;
+        font-family: $mainFontLight;
+        // XS
+        @media (max-width: $xs) {
+          font-size: 1em;
+          margin: 0;
+        }
+      }
+
+      .btn {
+        margin: 0px auto;
+        // XS
+        @media (max-width: $xs) {
+          margin-top: 15px;
+        }
+
+        span {
+          opacity: 0;
+          animation: textfadein .8s ease-in-out .6s;
+          animation-fill-mode:forwards;
+        }
+
+        @keyframes textfadein {
+          from {
+            opacity: 0;
+          }
+
+          to {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+// About
+.about {
+  display: flex;
+  // XS
+  @media (max-width: $xs) {
+    img {
+      margin: 0 auto;
+      margin-bottom: 25px;
+    }
+  }
+
+  .description {
+    padding-left: 40px;
+    // XS
+    @media (max-width: $xs) {
+      padding: 0;
+    }
+    // SM
+    @media (min-width: $sm-min) and (max-width: $sm-max)  {
+      padding: 0;
+    }
+
+    h3 {
+      font-size: 3em;
+      // XS
+      @media (max-width: $xs) {
+        font-size: 2.8125em;
+        text-align: center;
+      }
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max)  {
+        text-align: center;
+      }
+
+      color: $textColor;
+      font-family: $mainFontBold;
+      line-height: 41px;
+      margin: -24px 0 34px 0;
+
+      span {
+        font-size: 30px;
+        color: $textColor;
+        font-family: $mainFontLight;
+      }
+    }
+
+    hr {
+      max-width: 70px;
+      text-align: left;
+      color: $textColor;
+      border-top: 2px solid $textColor;
+      margin-left: 1px;
+      // XS
+      @media (max-width: $xs) {
+        margin-left: auto;
+        text-align: center;
+      }
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max)  {
+        margin-left: auto;
+        text-align: center;
+      }
+    }
+
+    p {
+      font-size: 1.125em;
+      font-family: $mainFontLight;
+      color: $textColorDarkGray;
+      line-height: 30px;
+      // XS
+      @media (max-width: $xs) {
+        font-size: 1em;
+        text-align: justify;
+      }
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max)  {
+        text-align: justify;
+      }
+    }
+    // XS
+    @media (max-width: $xs) {
+      button {
+        margin: auto;
+      }
+    }
+    // SM
+    @media (min-width: $sm-min) and (max-width: $sm-max)  {
+      button {
+        margin: auto;
+      }
+
+      img {
+        display: block;
+        margin: 30px auto;
+      }
+    }
+  }
+
+  // SM
+  @media (min-width: $sm-min) and (max-width: $sm-max)  {
+    img {
+      display: block;
+      margin: 30px auto;
+    }
+  }
+
+  .row:nth-child(odd) {
+    // XS
+    @media (max-width: $xs) {
+      display: flex;
+      flex-direction: row;
+      flex-direction: column;
+    }
+
+    .description {
+      padding-left: 0px;
+    }
+    // XS
+    @media (max-width: $xs) {
+      .col-xs-12:first-child {
+        order: 1;
+      }
+    }
+  }
+
+  .row:nth-child(n+2) {
+    margin-bottom: 70px;
+    // XS
+    @media (max-width: $xs) {
+      margin-bottom: 50px;
+    }
+  }
+
+  .row:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+// Our Best Work
+.work {
+  .sectionHeadline {
+    // XS
+    @media (max-width: $xs) {
+      margin: 30px auto 35px auto;
+    }
+    // SM
+    @media (min-width: $sm-min) and (max-width: $sm-max)  {
+      margin: 30px auto 35px auto;
+    }
+  }
+
+  .masonry {
+    .box {
+      width: 100%;
+      height: 364px;
+      background: gray;
+      background: url('http://placehold.it/364x364');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+        z-index: 0;
+        background: $textColor;
+      }
+
+      &:hover:before {
+        opacity: .8;
+        cursor: pointer;
+      }
+
+      &:hover .btn {
+        display: block;
+      }
+
+      .btn {
+        z-index: 1;
+        display: none;
+        color: $textColorWhite;
+        background: $textColor;
+      }
+
+      // XS
+      @media (max-width: $xs) {
+        margin-bottom: 25px;
+        height: 122px;
+      }
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max) {
+        margin-top: 30px;
+      }
+    }
+
+    .box:nth-child(even) {
+      margin-top: 30px;
+      // XS
+      @media (max-width: $xs) {
+        margin-top: 0px;
+      }
+    }
+
+    // Too complicated - fix
+    .col-md-4:nth-child(even) {
+      .box:nth-child(odd) {
+        height: 590px;
+        // XS
+        @media (max-width: $xs) {
+          height: 122px;
+        }
+
+        background: url('http://placehold.it/364x590');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .col-md-4:nth-child(odd) {
+      .box:nth-child(even) {
+        height: 590px;
+        // XS
+        @media (max-width: $xs) {
+          height: 122px;
+        }
+
+        background: url('http://placehold.it/364x590');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+  .btn {
+    margin: 50px auto;
+    // XS
+    @media (max-width: $xs) {
+      margin: 10px auto;
+      margin-bottom: 55px;
+    }
+  }
+}
+
+// Out Team
+.team {
+  min-height: 600px;
+  background: $mainYellow;
+  padding-bottom: 100px;
+  position: relative;
+  // XS
+  @media (max-width: $xs) {
+    min-height: auto;
+    padding-bottom: 0px;
+  }
+  // SM
+  @media (min-width: $sm-min) and (max-width: $sm-max)  {
+    min-height: auto;
+    padding-bottom: 50px;
+  }
+
+  .sectionHeadline {
+    // XS
+    @media (max-width: $xs) {
+      margin: 30px auto 35px auto;
+    }
+    // SM
+    @media (min-width: $sm-min) and (max-width: $sm-max)  {
+      margin: 30px auto 35px auto;
+    }
+  }
+
+  .teamMember {
+    text-align: center;
+    // XS
+    @media (max-width: $xs) {
+      margin-bottom: 40px;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    h3 {
+      font-size: 2.375em;
+      font-family: $mainFontBold;
+      text-transform: lowercase;
+      margin: 15px auto;
+      max-width: 290px;
+      line-height: 41px;
+    }
+
+    hr {
+      max-width: 70px;
+      text-align: center;
+      color: $textColor;
+      border-top: 2px solid $textColor;
+      margin: 0 auto;
+    }
+
+    p {
+      font-size: 1.125em;
+      font-family: $mainFontLight;
+      text-transform: lowercase;
+      margin-top: 8px;
+    }
+  }
+
+  .arrows {
+    .left, .right {
+      width: 45px;
+      top: 47%;
+      cursor: pointer;
+      // XS
+      @media (max-width: $xs) {
+        top: 40%;
+      }
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max) {
+        top: 43%;
+      }
+    }
+
+    .left {
+      position: absolute;
+      left: 10%;
+
+      // XS
+      @media (max-width: $xs) {
+        left: 1%;
+      }
+
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max) {
+        left: 2%;
+      }
+
+      // arrow position for middle laptops
+      @media (min-width: $md-max) and (max-width: 1600px) {
+        left: 1%;
+      }
+    }
+
+    .right {
+      position: absolute;
+      right: 10%;
+      transform: rotateY(180deg);
+
+      // XS
+      @media (max-width: $xs) {
+        right: 1%;
+      }
+
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max) {
+        right: 2%;
+      }
+
+      // arrow position for middle laptops
+      @media (min-width: $md-max) and (max-width: 1600px) {
+        right: 1%;
+      }
+    }
+  }
+
+  .owl-pagination {
+    display: none;
+  }
+}
+
+// Reviews
+.reviews {
+  .sectionHeadline {
+    // XS
+    @media (max-width: $xs) {
+      margin: 30px auto 35px auto;
+    }
+    // SM
+    @media (min-width: $sm-min) and (max-width: $sm-max)  {
+      margin: 30px auto 35px auto;
+    }
+  }
+  .reviewContent {
+    .name {
+      color: $textColor;
+      text-transform: lowercase;
+      font-size: 2.5em;
+      font-family: $mainFontBold;
+      text-align: right;
+      margin: 0;
+      // XS
+      @media (max-width: $xs) {
+        text-align: left;
+      }
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max)  {
+        text-align: left;
+      }
+    }
+
+    hr {
+      max-width: 70px;
+      text-align: right;
+      color: $textColor;
+      border-top: 2px solid $textColor;
+      margin: 8px 0 10px auto;
+      // XS
+      @media (max-width: $xs) {
+        margin: 8px auto 10px 0;
+      }
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max)  {
+        margin: 8px auto 10px 0;
+      }
+    }
+
+    .position {
+      font-size: 1.125em;
+      font-family: $mainFontLight;
+      text-transform: lowercase;
+      margin-top: 8px;
+      text-align: right;
+      // XS
+      @media (max-width: $xs) {
+        text-align: left;
+      }
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max)  {
+        text-align: left;
+      }
+    }
+
+    .reviewText {
+      font-size: 1.125em;
+      font-family: $mainFontLight;
+      color: $textColorDarkGray;
+      line-height: 30px;
+      margin-top: 13px;
+
+      // XS
+      @media (max-width: $xs) {
+        font-size: 1em;
+        text-align: justify;
+      }
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max)  {
+        text-align: justify;
+      }
+    }
+  }
+
+  .reviewGallery {
+    margin-top: 80px;
+    // XS
+    @media (max-width: $xs) {
+      margin-top: 30px;
+    }
+    // SM
+    @media (min-width: $sm-min) and (max-width: $sm-max)  {
+      margin-top: 30px;
+    }
+
+    .wrapper {
+      max-height: 140px;
+      width: 100%;
+      overflow-y: hidden;
+
+      // XS
+      @media (max-width: $xs) {
+        max-height: 500px;
+        margin-bottom: 25px;
+      }
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max)  {
+        max-height: 200px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  //Controls Position
+  .owl-page {
+    margin: 80px auto;
+    // XS
+    @media (max-width: $xs) {
+      margin: 10px auto 40px auto;
+    }
+    // SM
+    @media (min-width: $sm-min) and (max-width: $sm-max)  {
+      margin: 10px auto 40px auto;
+    }
+
+    span {
+      margin: 7px;
+    }
+  }
+}
+
+// Contact
+.contact {
+  min-height: 677px;
+  background: $textColor;
+
+  .sectionHeadline {
+    color: $textColorWhite;
+    // XS
+    @media (max-width: $xs) {
+      margin: 30px auto 35px auto;
+    }
+    // SM
+    @media (min-width: $sm-min) and (max-width: $sm-max)  {
+      margin: 30px auto 35px auto;
+    }
+  }
+
+  .contactInfo {
+    color: $textColorWhite;
+    font-family: $mainFontLight;
+
+    .address, .phone, .e-mail {
+      position: relative;
+      padding-left: 35px;
+    }
+
+    .address {
+      margin-top: 0;
+      margin-bottom: 35px;
+      line-height: 28px;
+
+      &:before {
+        content: '';
+        width: 16px;
+        height: 21px;
+        position: absolute;
+        left: 0;
+        top: 3px;
+        background: url('../img/pin.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .phone {
+      margin-bottom: 35px;
+
+      &:before {
+        content: '';
+        width: 14px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        background: url('../img/phone.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .e-mail {
+      &:before {
+        content: '';
+        width: 21px;
+        height: 15px;
+        position: absolute;
+        left: -3px;
+        top: 4px;
+        background: url('../img/envelope.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .socials {
+      height: 40px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      margin: 50px auto 0px -4px;
+      // XS
+      @media (max-width: $xs) {
+        margin: 25px auto 35px auto;
+      }
+      // SM
+      @media (min-width: $sm-min) and (max-width: $sm-max)  {
+        margin: 25px auto 35px auto;
+      }
+
+      li {
+        float: left;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $textColorWhite;
+        margin-right: 20px;
+        // XS
+        @media (max-width: $xs) {
+          margin-right: 10px;
+        }
+        // SM
+        @media (min-width: $sm-min) and (max-width: $sm-max)  {
+          margin-right: 10px;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .contactForm {
+    .contactInput, textarea {
+      font-size: 1.125em;
+      color: $textColorDarkGray;
+      font-family: $mainFontLight;
+
+      &::-webkit-input-placeholder {
+        color: $textColorDarkGray;
+      }
+    }
+
+    .contactInput {
+      width: 100%;
+      height: 40px;
+      padding-bottom: 17px;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $textColorDarkGray;
+      background: transparent;
+      margin-bottom: 30px;
+    }
+
+    textarea {
+      width: 100%;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $textColorDarkGray;
+      background: transparent;
+      resize:none;
+      min-height: 100px;
+    }
+  }
+
+  .btn {
+    min-width: 85px;
+    margin-top: 45px;
+    // XS
+    @media (max-width: $xs) {
+      margin: 35px auto 50px auto;
+    }
+    // SM
+    @media (min-width: $sm-min) and (max-width: $sm-max)  {
+      margin: 35px auto 50px auto;
+    }
+  }
+}
+
+// Footer
+.footer {
+  height: 130px;
+  width: 100%;
+  background: $textColorWhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .copyright {
+
+    .year {
+      font-size: 1.125em;
+      font-family: $mainFontBold;
+      color: $textColor;
+    }
+
+    p {
+      font-size: .875em;
+      font-family: $mainFontLight;
+      color: $textColor;
+      margin: 0;
+      line-height: 28px;
+      color: $textColorDarkGray;
+    }
+  }
+}
